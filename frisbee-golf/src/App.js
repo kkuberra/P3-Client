@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Map from './components/Map';
 import './App.css';
-import Map from './Components/Map';
+
+const baseUrl = 'https://frisbee-golf.herokuapp.com/'
+
 
 class App extends Component {
+  state = {
+    locations: []
+  }
+  
+  componentDidMount = () => {
+    fetch(baseUrl + 'locations')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          locations: data
+        })
+        // console.log(data)
+      })
+  }
+  
   render() {
+    console.log(this.state.locations)
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <React.Fragment>
+        < Map />
+        <h1>{this.state.locations.map(location => {
+          return location.hazards
+        })}</h1>
+      </React.Fragment>
     );
   }
 }
