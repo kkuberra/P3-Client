@@ -9,12 +9,12 @@ const MyMapComponent = compose(
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCg-3HXvx8eaDiQqFAGibAQPJPrrhWnbss&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `400px` }} />,
-        mapElement: <div style={{ height: `100%` }} />,
+        mapElement: <div style={{ height: `100%`, width: `50%` }} />,
     }),
     withScriptjs,
     withGoogleMap
 )((props) =>
-    <GoogleMap
+    < GoogleMap
         defaultZoom={11}
         defaultCenter={{ lat: 39.815977, lng: -105.202629 }}
     >
