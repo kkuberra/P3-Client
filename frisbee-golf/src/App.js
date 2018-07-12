@@ -19,6 +19,18 @@ class App extends Component {
     clicked: false
   }
   
+  loadComments = () => {
+    return fetch(baseUrl + 'comments')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        comments: data
+      })
+      // console.log(data)
+    })
+
+  }
+
   componentDidMount = () => {
     fetch(baseUrl + 'locations')
       .then(response => response.json())
@@ -28,14 +40,7 @@ class App extends Component {
         })
         // console.log(data)
       })
-    fetch(baseUrl + 'comments')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          comments: data
-        })
-        // console.log(data)
-      })
+    this.loadComments()
 
     }
 
@@ -62,10 +67,10 @@ class App extends Component {
             {this.state.clicked && <MessageBox className="messageBox" location={this.state.location} />}
           </div>
           <div className="commentSide">
-            <CommentForm location={this.state.location}/>
+            <CommentForm location={this.state.location} loadComments={this.loadComments} />
             <div className="ui comments large">
             {
-              this.state.comments.map(comment => < Comment key = {comment.id} {...comment}/ > )
+              this.state.comments.map(comment => <Comment key = {comment.id} {...comment} loadComments= {this.loadComments} /> )
             }
             </div>
           </div>

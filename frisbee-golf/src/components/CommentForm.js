@@ -34,7 +34,7 @@ class CommentForm extends React.Component{
         "content-type": "application/json"
       }),
       body: JSON.stringify(data)
-    });
+    }).then(() =>this.props.loadComments() )
     
   }
 
