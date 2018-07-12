@@ -3,7 +3,9 @@ import Map from './components/Map';
 import './App.css';
 import CommentForm from './components/CommentForm'
 import MessageBox from "./components/Message"
-
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+{/*import CommentBox from "./components/CommentBox"*/}
 
 const baseUrl = 'https://frisbee-golf.herokuapp.com/'
 
@@ -27,7 +29,7 @@ class App extends Component {
   }
 
   displayMessage = (location) => {
-    console.log(location);
+    // console.log(location);
     
     this.setState({
       clicked: !this.state.clicked,
@@ -36,17 +38,23 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state.locations)
+    // console.log('a', this.state.locations[0])
+    // console.log('a', this.state.location)
     return (
 
       <React.Fragment>
-        <Map locations={this.state.locations} displayMessage={this.displayMessage} />
-        <h1>{this.state.locations.map(location => {
-          return location.hazards
-        })}</h1>
-        {this.state.clicked && <MessageBox location={this.state.location} />
-}
-        <CommentForm />
+        <Header />
+        <div className="main" >
+          <div className="mapSide">
+            <Map locations={this.state.locations} displayMessage={this.displayMessage} />
+            {this.state.clicked && <MessageBox className="messageBox" location={this.state.location} />}
+          </div>
+          <div className="commentSide">
+            <CommentForm location={this.state.location}/>
+            {/*<CommentBox />*/}
+          </div>
+        </div>
+        <Footer />
       </React.Fragment>
 
     );

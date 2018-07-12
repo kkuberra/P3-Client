@@ -26,3 +26,40 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.message {
+  margin-left: 10px;
+  width: 55%;
+}
+
+header {
+  height: 10vh;
+}
+footer {
+  height: 5vh;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+}
+
+.mapSide{
+  background-color: aqua;
+  height: 85vh;
+  width: 50vw;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.commentSide{
+  background-color: darkgray;
+  height: 85vh;
+  width: 50vw;
+}
+
+/* .messageBox {
+  padding-top: 1vh;
+} */

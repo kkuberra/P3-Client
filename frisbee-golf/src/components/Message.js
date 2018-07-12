@@ -2,7 +2,7 @@ import React from 'react'
 import { Message } from 'semantic-ui-react'
 
 const MessageBox = (props) => (
-  <Message>
+  <Message className='message'>
     <Message.Header>{props.location.name}</Message.Header>
     <Message.List>
       <Message.Item>Hazards: {props.location.hazards}</Message.Item>

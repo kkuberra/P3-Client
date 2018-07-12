@@ -8,7 +8,7 @@ const MyMapComponent = compose(
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCg-3HXvx8eaDiQqFAGibAQPJPrrhWnbss&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
         containerElement: <div style={{ height: `400px` }} />,
-        mapElement: <div style={{ height: `100%`, width: `60%` }} />,
+        mapElement: <div style={{ height: `100%`, width: `100%` }} />,
     }),
     withScriptjs,
     withGoogleMap
@@ -49,19 +49,19 @@ class Map extends React.PureComponent {
     }
 
     handleMarkerClick = (event) => {
-        console.log('====================================');
-        console.log(event);
-        console.log('====================================');
+        // console.log('====================================');
+        // console.log(event);
+        // console.log('====================================');
 
         const title = event.Ha.target.title;
         const location = this.props.locations.filter(location => location.name === title)[0]
-        console.log(location);
+        // console.log(location);
         this.props.displayMessage(location)
         
     }
 
     render() {
-        console.log('Props', this.props);
+        // console.log('Props', this.props);
         
         return (
             
