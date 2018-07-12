@@ -5,13 +5,15 @@ import CommentForm from './components/CommentForm'
 import MessageBox from "./components/Message"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-{/*import CommentBox from "./components/CommentBox"*/}
+import Comment from "./components/Comment"
+
 
 const baseUrl = 'https://frisbee-golf.herokuapp.com/'
 
 
 class App extends Component {
   state = {
+    comments: [],
     locations: [],
     location: {},
     clicked: false
@@ -26,7 +28,17 @@ class App extends Component {
         })
         // console.log(data)
       })
-  }
+    fetch(baseUrl + 'comments')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          comments: data
+        })
+        // console.log(data)
+      })
+
+    }
+
 
   displayMessage = (location) => {
     // console.log(location);
@@ -51,7 +63,11 @@ class App extends Component {
           </div>
           <div className="commentSide">
             <CommentForm location={this.state.location}/>
-            {/*<CommentBox />*/}
+            <div className="ui comments large">
+            {
+              this.state.comments.map(comment => < Comment key = {comment.id} {...comment}/ > )
+            }
+            </div>
           </div>
         </div>
         <Footer />

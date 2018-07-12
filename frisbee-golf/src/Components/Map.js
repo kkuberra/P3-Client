@@ -49,9 +49,7 @@ class Map extends React.PureComponent {
     }
 
     handleMarkerClick = (event) => {
-        // console.log('====================================');
-        // console.log(event);
-        // console.log('====================================');
+
 
         const title = event.Ha.target.title;
         const location = this.props.locations.filter(location => location.name === title)[0]
