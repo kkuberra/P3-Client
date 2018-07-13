@@ -20,7 +20,7 @@ fetch(baseUrl + '/' +id, {
       <Comment>
         
         <Comment.Content>
-          <Comment.Author as='a'>Joe Henderson</Comment.Author>
+          <Comment.Author as='a'>John Doe</Comment.Author>
           <Comment.Metadata>
             <span>5 days ago</span>
           </Comment.Metadata>

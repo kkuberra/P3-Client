@@ -1,3 +1,20 @@
+body{
+    /* The image used */
+    background-image: url("./components/Disc-Golf.png");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -13,6 +30,7 @@
   padding: 20px;
   color: white;
 }
+
 
 .App-title {
   font-size: 1.5em;
@@ -30,7 +48,7 @@
 
 .message {
   margin-left: 10px;
-  width: 55%;
+  width: 60%;
 }
 
 header {
@@ -41,13 +59,31 @@ footer {
 }
 
 .main{
+  /* max-width: 100%; */
   display: flex;
   flex-direction: row;
   overflow: hidden;
 }
 
+.background-container {
+  position: relative;
+  
+}
+
+.centered {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  width: 90%;
+  /* background-color: rgba(0, 0, 0, 0.438); */
+}
+
 .mapSide{
-  background-color: aqua;
+  /* background-color: aqua; */ 
+  /* position: relative; */
+  
   height: 85vh;
   width: 50vw;
   padding-top: 3%;
@@ -56,9 +92,16 @@ footer {
 }
 
 .commentSide{
-  background-color: darkgray;
-  height: 85vh;
-  width: 50vw;
+  /* background-color: darkgray; */
+   /* position: relative;
+   z-index: 4; */
+  /* width: 50vw; */
   padding-left: 3%;
   padding-top: 3%;
 }
+
+.footer {
+  padding-left: 3%;
+}
+
+

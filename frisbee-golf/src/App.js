@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from './components/Map';
+import Background from './components/Background'
 import './App.css';
 import CommentForm from './components/CommentForm'
 import MessageBox from "./components/Message"
@@ -69,6 +70,7 @@ class App extends Component {
           <div className="commentSide">
             <CommentForm location={this.state.location} loadComments={this.loadComments} />
             <div className="ui comments large">
+        <Background />
             {
               this.state.comments.map(comment => <Comment key = {comment.id} {...comment} loadComments= {this.loadComments} /> )
             }
