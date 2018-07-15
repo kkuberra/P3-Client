@@ -69,7 +69,7 @@ class App extends Component {
           </div>
           <div className="commentSide">
             <CommentForm location={this.state.location} loadComments={this.loadComments} />
-            <div className="ui comments large">
+            <div className="ui-comments-large">
         <Background />
             {
               this.state.comments.map(comment => <Comment key = {comment.id} {...comment} loadComments= {this.loadComments} /> )

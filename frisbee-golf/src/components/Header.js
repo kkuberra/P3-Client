@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 const Header = () => {
   return (
     <header >
-      <h1>Frisbee Golf Finder</h1>
+    <div className="logo">
+        <img src="./golfHQ.png" style={{ height: "80px", width: "auto" }}/>
+    </div>
     </header>
   );
 };

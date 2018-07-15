@@ -29,6 +29,7 @@ fetch(baseUrl + '/' +id, {
             <a onClick={ () => this.deleteComment(this.props.id)}>Delete</a>
           </Comment.Actions>
         </Comment.Content>
+      
       </Comment>
     // </Comment.Group>
     // // <Comment.Group size='large'>
