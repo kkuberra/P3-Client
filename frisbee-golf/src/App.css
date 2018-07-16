@@ -28,7 +28,7 @@ header {
 
 footer {
   height: 3vh;
-  background-color: darkslategrey;
+  background-color: green;
   text-align: center;
 }
 
@@ -57,22 +57,36 @@ footer {
 .mapSide {
   /* background-color: aqua; */ 
   /* position: relative; */
-  
+  margin-left: 9%;
   height: 85vh;
   width: 50vw;
-  padding-top: 3%;
+  padding-top: 10%;
   padding-left: 10%;
   padding-right: 3%;
 }
 
 .commentSide {
+  /* margin-left: 5%; */
   padding-left: 3%;
-  /* margin-top: 5px; */
-  padding-top: 3%;
+  padding-top: 10%;
 }
 
 .ui-comments-large {
   background-color: whitesmoke;
   padding: 15px;
   -webkit-border-radius: 15px 15px;
+}
+
+.info {
+  margin-top: 12px;
+  margin-bottom: 55px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.details {
+  margin-top: 9px;
+  color: white;
+  letter-spacing: .5px;
+  background-color: rgba(65, 103, 9, 0.502);
 }

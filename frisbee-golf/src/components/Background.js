@@ -6,8 +6,6 @@ export default class Background extends Component {
         return (
         
             <div className = 'background-container' >
-                <div className = 'centered' >
-                </div>
             </div>
         
         );
