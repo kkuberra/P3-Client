@@ -24,7 +24,7 @@ const MyMapComponent = compose(
         title={location.name}
         label={location.name}
         position={{ lat: location.lat, lng: location.lng }}
-        onClick={props.onMarkerClick} />)}
+        onClick={(e) => props.onMarkerClick (location.name)} />)}
 
         {/*{props.isMarkerShown && <Marker position={{ lat: 39.734354, lng: -105.038970 }} onClick={props.onMarkerClick} />}
 {props.isMarkerShown && <Marker position={{ lat: 39.636423, lng: -104.876888 }} onClick={props.onMarkerClick} />}*/}
@@ -48,10 +48,10 @@ class Map extends React.PureComponent {
         }, 3000)
     }
 
-    handleMarkerClick = (event) => {
+    handleMarkerClick = (title) => {
 
 
-        const title = event.Ha.target.title;
+        // const title = event.target.title;
         const location = this.props.locations.filter(location => location.name === title)[0]
         // console.log(location);
         this.props.displayMessage(location)
