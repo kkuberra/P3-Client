@@ -11,7 +11,7 @@ class CommentForm extends React.Component{
   }
   
   handleChange=(event)=>{
-    // console.log(event.target.value);
+
     
     this.setState({
       comment:event.target.value
@@ -39,7 +39,6 @@ class CommentForm extends React.Component{
   }
 
   render (){
-    // console.log(this.state);
     console.log('b', this.props.location)
 
   return (
