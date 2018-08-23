@@ -27,7 +27,6 @@ class App extends Component {
       this.setState({
         comments: data
       })
-      // console.log(data)
     })
 
   }
@@ -39,7 +38,7 @@ class App extends Component {
         this.setState({
           locations: data
         })
-        // console.log(data)
+
       })
     this.loadComments()
 
@@ -47,7 +46,6 @@ class App extends Component {
 
 
   displayMessage = (location) => {
-    // console.log(location);
     
     this.setState({
       clicked: !this.state.clicked,
@@ -56,8 +54,6 @@ class App extends Component {
   }
   
   render() {
-    // console.log('a', this.state.locations[0])
-    // console.log('a', this.state.location)
     return (
 
       <React.Fragment>
